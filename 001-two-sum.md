@@ -18,7 +18,52 @@ tags:
 你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。
 
 # 解题思路一：
-1. 双重循环遍历，判断nums[i] + nums[j] = target（超时）
-    - 很显然这种方式太暴力，时间复杂度为O(N*N)
-2. 竟然给定了target，我们就可以根据一个值求出另一个值，然后在判断这个值是否在nums数组中，即可。（勉强飘过）
-3. 遍历一次用字典存储起来，然后获取另一个值
+双重循环遍历，判断nums[i] + nums[j] = target，很显然这种方式太暴力
+- 时间复杂度为O(N*N)
+- 空间复杂度：O(1)
+
+
+# 解题思路二：
+竟然给定了target，我们就可以根据一个值求出另一个值
+然后在判断这个值是否在nums数组中，即可。
+- 时间复杂度为O(N*M)
+- 空间复杂度：O(1)
+```python 0
+class Solution:
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        for i, v in enumerate(nums):
+            value = target - v
+            if value not in nums:
+                continue
+            j = nums.index(value)
+            if i != j:
+                return [i, j]
+        return None
+```
+
+# 解题思路三：
+在二的基础上，判断是否在数组中，可以遍历一次用字典存储起来，然后获取另一个值
+- 时间复杂度为O(N)
+- 空间复杂度：O(N)
+```python 1
+class Solution:
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        dInfo = {}
+        for x, xValue in enumerate(nums):
+            yValue = target - xValue
+            if yValue in dInfo:
+                return [dInfo[yValue], x]
+            dInfo[xValue] = x
+        return None
+
+```

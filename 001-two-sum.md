@@ -1,13 +1,3 @@
----
-title: Git submodule使用和一键配置
-date: 2018-12-05 19:42:15
-categories:
-- LeetCode
-tags:
-- LeetCode
-- python3
----
-
 # 题目地址
 - 英文：https://leetcode.com/problems/two-sum/
 - 中文：https://leetcode-cn.com/problems/two-sum/
@@ -65,5 +55,4 @@ class Solution:
                 return [dInfo[yValue], x]
             dInfo[xValue] = x
         return None
-
 ```

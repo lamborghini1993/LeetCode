@@ -11,8 +11,9 @@ import os
 import time
 
 HEXO_DIE = "../lamborghini1993.github.io/source/_posts"
-PYTHON_START = "```python "
+PYTHON_START = "```python"
 PYTHON_END = "```"
+PYTHON_INDEX = "<!--python"
 
 
 def Time2Str(ti=-1, timeformat="%Y-%m-%d %H:%M:%S"):
@@ -30,30 +31,28 @@ def Start():
             continue
         lstResult = []
         lstLine = []
-        sPython = ""
         curIndex = ""
         bIsPython = False
         pythonHead = os.path.splitext(sFile)[0]
         with open(sFile, "r", encoding="utf-8") as f:
             lstLine = f.readlines()
         for line in lstLine:
-            if line.startswith(PYTHON_START):
+            if line.startswith(PYTHON_INDEX):
+                curIndex = line.replace(PYTHON_INDEX, "")[0]
                 lstResult.append(line)
-                bIsPython = True
-                curIndex = line.replace(PYTHON_START, "")[:-1]
                 if curIndex == "0":
                     curIndex = ""
-            elif (len(line) == 3 and line == PYTHON_END) or line[:-1] == PYTHON_END:
+            elif line.startswith(PYTHON_START):
+                lstResult.append(line)
+                bIsPython = True
+            elif bIsPython and line.startswith(PYTHON_END):
                 pFile = pythonHead + curIndex + ".py"
                 with open(pFile, "r", encoding="utf-8") as f:
                     lines = f.read()
                     lstResult.append(lines)
                 lstResult.append(line)
                 bIsPython = False
-                sPython = ""
-            elif bIsPython:
-                sPython += line
-            else:
+            elif not bIsPython:
                 lstResult.append(line)
         sResult = "".join(lstResult)
         Write2File(sResult, sFile)
@@ -62,11 +61,12 @@ def Start():
 def Write2File(sResult, sFile):
     with open(sFile, "w", encoding="utf-8") as f:
         f.write(sResult)
+        print("write to %s" % sFile)
     sHexoFile = os.path.join(os.getcwd(), HEXO_DIE, "LeetCode-" + sFile)
     sHexoFile = os.path.abspath(sHexoFile)
     date = update = Time2Str()
     title = "LeetCode-" + os.path.splitext(sFile)[0]
-    print(sHexoFile)
+    print("write to %s" % sHexoFile)
     if os.path.exists(sHexoFile):
         with open(sHexoFile, "r", encoding="utf-8") as f:
             while True:

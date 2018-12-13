@@ -1,6 +1,9 @@
+# 题目地址
+- 英文：https://leetcode.com/problems/longest-palindromic-substring/
+- 中文：https://leetcode-cn.com/problems/longest-palindromic-substring/
 
-# 分析：
-
+# 题意：
+给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。
 
 # 解题思路一：
 > 回文子串的规律是左右对称，所有我们可以遍历每个字符，向两边做扩展来判断最大的回文串长度

@@ -69,6 +69,7 @@ def Write2HexoMD(lstResult, sFile, setTags):
     sResult = "%s\n%s\n# github\n- https://github.com/lamborghini1993/LeetCode\n" % (sHexoTitle, sResult)
     with open(sHexoFile, "w", encoding="utf-8") as f:
         f.write(sResult)
+        print("write -> %s" % sHexoFile)
 
 
 def Code2MD(sFile):
@@ -92,6 +93,7 @@ def Code2MD(sFile):
                 bIsCode = False
             continue
 
+        bAdd = False
         for codeInfo, tInfo in CODE_INFO.items():
             if line.startswith(codeInfo):
                 lstResult.append(line)
@@ -107,9 +109,10 @@ def Code2MD(sFile):
                 else:   # 无代码
                     sCode = GetCode(sHead, fileIndex, codeSuffix, mdCodePre)
                     lstResult.append(sCode)
+                    bAdd = True
                 break
 
-        if not bIsCode:
+        if not bIsCode and not bAdd:
             lstResult.append(line)
 
     Write2CurMD(lstResult, sFile)

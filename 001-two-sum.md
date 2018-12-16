@@ -34,6 +34,7 @@ class Solution:
             if i != j:
                 return [i, j]
         return None
+
 ```
 
 # 解题思路三：
@@ -56,4 +57,5 @@ class Solution:
                 return [dInfo[yValue], x]
             dInfo[xValue] = x
         return None
+
 ```

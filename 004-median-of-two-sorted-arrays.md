@@ -45,4 +45,5 @@ class Solution:
 obj = Solution()
 print(obj.findMedianSortedArrays([1, 3], [2]))
 print(obj.findMedianSortedArrays([1, 2], [3, 4]))
+
 ```

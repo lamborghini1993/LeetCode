@@ -9,7 +9,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
+            "label": "C++_build",
             "type": "shell",
             // 编译参数 ggc -g ${file} -o ${fileDirname}${fileBasenameNoExtension}.exe
             "command": "g++",
@@ -21,6 +21,34 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "go_fmt",
+            "type": "shell",
+            "command": "gofmt",
+            "args": [
+                "-w",
+                "${file}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "go_run",
+            "type": "shell",
+            "command": "go",
+            "args": [
+                "run",
+                "${file}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
         }
     ]
 }

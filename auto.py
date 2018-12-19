@@ -11,6 +11,7 @@ import time
 CODE_INFO = {
     "<!--python": (".py", "python"),
     "<!--c++": (".cpp", "C++"),
+    "<!--go": (".go", "go"),
 }
 
 CODE_END = ["```", "```\n"]

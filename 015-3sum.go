@@ -3,29 +3,31 @@ package main
 import (
 	"fmt"
 	"sort"
-	"strconv"
 )
 
 func threeSum(nums []int) [][]int {
 	sort.Ints(nums)
 	var items [][]int
 	var i,j,k,s int
-	mpa1 := make(map[string]bool)
 	for i = 0; i < len(nums); i++ {
-		j=i+1
-		k=len(nums)-1
+		if i != 0 && nums[i] <= nums[i-1] {
+			continue	// 去重相同的
+		}
+		j = i + 1
+		k = len(nums) - 1
 		for j < k {
 			s = nums[i] + nums[j] + nums[k]
 			if s == 0 {
 				tmp := []int{nums[i], nums[j], nums[k]}
-				t := strconv.Itoa(nums[i]) + "_" + strconv.Itoa(nums[j]) + "_" + strconv.Itoa(nums[k])
-				if _, ok := mpa1[t]; ok {
-					continue
-				}
-				mpa1[t] = true
-				fmt.Println(tmp)
 				items = append(items, tmp)
-				break
+				j += 1
+				k -= 1
+				for j < k && nums[j] == nums[j-1] {	
+					j += 1	 // 去重相同的
+				}
+				for j < k && nums[k] == nums[k+1] {	
+					k -= 1	// 去重相同的
+				}
 			} else if s < 0 {
 				j += 1
 			} else {
@@ -34,34 +36,6 @@ func threeSum(nums []int) [][]int {
 		}
 	}
 	return items
-}
-
-func findNum(nums []int, v int) (int, bool) {
-	l := 0
-	r := len(nums) - 1
-	b := false
-	if nums[0] > v || nums[r] < v {
-		return l, b
-	}
-	var m int
-	for l <= r {
-		m = (l + r) / 2
-		if nums[m] < v {
-			l = m + 1
-		} else if nums[m] > v {
-			r = m - 1
-		} else {
-			for m < len(nums) - 1 {
-				if nums[m+1] == v {
-					m += 1
-				} else {
-					return m, true
-				}
-			}
-			return m, true
-		}
-	}
-	return l, false
 }
 
 func main() {

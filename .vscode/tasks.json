@@ -11,7 +11,6 @@
         {
             "label": "C++_build",
             "type": "shell",
-            // 编译参数 ggc -g ${file} -o ${fileDirname}${fileBasenameNoExtension}.exe
             "command": "g++",
             "args": [
                 "-g",
@@ -20,7 +19,8 @@
             "group": {
                 "kind": "build",
                 "isDefault": true
-            }
+            },
+            "problemMatcher": []
         },
         {
             "label": "go_fmt",

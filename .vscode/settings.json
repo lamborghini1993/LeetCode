@@ -1,3 +1,6 @@
 {
-    "go.inferGopath": true
+    "go.inferGopath": true,
+    "files.associations": {
+        "iostream": "cpp"
+    }
 }

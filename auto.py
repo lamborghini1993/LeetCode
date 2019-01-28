@@ -15,7 +15,7 @@ CODE_INFO = {
 }
 
 CODE_END = ["```", "```\n"]
-HEXO_DIE = "../lamborghini1993.github.io/source/_posts"
+HEXO_DIE = "../lamborghini1993.github.io/source/_posts/LeetCode"
 g_NowTime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 HEXO_TITLE = """---
 title: {TITLE}
@@ -57,7 +57,8 @@ def Write2HexoMD(lstResult, sFile, setTags):
                     break
                 if line.startswith("date: "):
                     date = line.replace("date: ", "")[:-1]
-                    break
+                if line.startswith("update: "):
+                    update = line.replace("update: ", "")[:-1]
     title = "LeetCode-" + os.path.splitext(sFile)[0]
     lstTags = ["- " + tag for tag in setTags]
     tags = "\n".join(lstTags)

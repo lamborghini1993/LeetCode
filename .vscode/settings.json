@@ -8,6 +8,8 @@
         "optional": "cpp",
         "system_error": "cpp",
         "type_traits": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "string": "cpp",
+        "algorithm": "cpp"
     }
 }

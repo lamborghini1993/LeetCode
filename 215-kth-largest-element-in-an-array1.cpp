@@ -15,6 +15,7 @@ class Solution
     int i;
     int findKthLargest(vector<int> &nums, int k)
     {
+        // 优先队列的内部实现就是用的最小/大堆，所有效率比我们手写快
         priority_queue<int, vector<int>, greater<int>> q;
         for (i = 0; i < k; i++)
             q.push(nums[i]);

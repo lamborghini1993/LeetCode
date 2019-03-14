@@ -10,6 +10,15 @@
 #include <unordered_map>
 using namespace std;
 
+typedef pair<int, int> PAIR;
+struct CmpByValue
+{
+    bool operator()(const PAIR &a, const PAIR &b)
+    {
+        return a.second > b.second;
+    }
+};
+
 class Solution
 {
   public:
@@ -17,8 +26,15 @@ class Solution
     {
         unordered_map<int, int> num;
         for (auto i : nums)
-            num[nums[i]]++;
-        
+            num[i]++;
+        vector<PAIR> rec(num.begin(), num.end());
+        sort(rec.begin(), rec.end(), CmpByValue());
+        vector<int> r(k, 0);
+        for (int i = 0; i < k; i++)
+        {
+            r[i] = rec[i].first;
+        }
+        return r;
     }
 };
 

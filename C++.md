@@ -1,3 +1,24 @@
+# 模板
+
+```c++
+#include <iostream>
+#include <cstdio>
+#include <cmath>
+#include <cstdlib>
+#include <cstring>
+#include <string>
+#include <queue>
+#include <climits>
+#include <algorithm>
+#include <unordered_map>
+using namespace std;
+
+int main()
+{
+    return 0;
+}
+```
+
 # 二维数组初始化
 
 ```c++

@@ -19,6 +19,7 @@
         "vector": "cpp",
         "initializer_list": "cpp",
         "cstdlib": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "set": "cpp"
     }
 }

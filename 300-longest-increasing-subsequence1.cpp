@@ -19,7 +19,8 @@ class Solution
         set<int> s;
         for (int num : nums)
         {
-            set<int>::iterator it = s.lower_bound(num);
+            // set<int>::iterator it = s.lower_bound(num);  等价的
+            set<int>::iterator it = lower_bound(s.begin(), s.end(), num);
             if (it == s.end())
                 s.insert(num);
             else

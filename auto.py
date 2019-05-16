@@ -1,9 +1,10 @@
 # -*- coding:utf-8 -*-
-"""
-@Author: lamborghini
-@Date: 2018-12-16 13:43:59
-@Desc: 
-"""
+'''
+@Description: 一键自动生成markdown博客
+@Author: lamborghini1993
+@Date: 2018-03-12 17:42:58
+@UpdateDate: 2019-05-16 20:32:50
+'''
 
 import os
 import time

@@ -32,6 +32,7 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
+            "preLaunchTask": "C++_build",
             "setupCommands": [{
                 "description": "Enable pretty-printing for gdb",
                 "text": "-enable-pretty-printing",

@@ -14,7 +14,7 @@
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
-            "miDebuggerPath": "D:/MinGW/bin/gdb.exe",
+            "miDebuggerPath": "D:/Programs/MingGW/bin",
             "setupCommands": [{
                 "description": "Enable pretty-printing for gdb",
                 "text": "-enable-pretty-printing",
@@ -44,7 +44,7 @@
             "type": "python",
             "request": "launch",
             "stopOnEntry": true,
-            "pythonPath": "${config:python.pythonPath}",
+            "pythonPath": "${config:python.interpreterPath}",
             "program": "${file}",
             "cwd": "${workspaceFolder}",
             "env": {},

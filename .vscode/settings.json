@@ -1,5 +1,5 @@
 {
-    "go.inferGopath": true,
+    "editor.tabSize": 4,
     "files.associations": {
         "iostream": "cpp",
         "ostream": "cpp",
@@ -22,5 +22,16 @@
         "queue": "cpp",
         "set": "cpp",
         "unordered_set": "cpp"
-    }
+    },
+    "fileheader.customMade": {
+        "Author": "lamborghini1993",
+        "Date": "Do not edit",
+    },
+    "go.inferGopath": true,
+    "python.pythonPath": "/usr/bin/python3",
+    "python.formatting.autopep8Args": [
+        "--max-line-length=120",
+        "--indent-size=4",
+        "--ignore=E121",
+    ]
 }

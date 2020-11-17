@@ -49,7 +49,7 @@
             "name": "Python: Current File",
             "type": "python",
             "request": "launch",
-            "pythonPath": "${config:python.interpreterPath}",
+            "pythonPath": "${command:python.interpreterPath}",
             "program": "${file}",
             "cwd": "${workspaceFolder}",
             "env": {},

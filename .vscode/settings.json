@@ -33,5 +33,8 @@
         "--max-line-length=120",
         "--indent-size=4",
         "--ignore=E121",
-    ]
+    ],
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    }
 }

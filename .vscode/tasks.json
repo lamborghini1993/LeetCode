@@ -19,7 +19,7 @@
         {
             "label": "C++_run",
             "type": "shell",
-            "command": "./a.exe",
+            "command": "./a.out",
             "dependsOn": ["C++_build"],
             "group": {
                 "kind": "build",

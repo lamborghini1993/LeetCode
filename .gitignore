@@ -2,3 +2,4 @@
 *.exe
 *.zh
 .vscode/ipch
+test/

@@ -5,14 +5,6 @@
 https://leetcode-cn.com/problems/spiral-matrix-ii/
 """
 
-
-# -*- coding:utf-8 -*-
-# Author: lamborghini1993
-# Date: 2021-03-15 14:01:55
-"""
-https://leetcode-cn.com/problems/spiral-matrix/
-"""
-
 from typing import List
 
 

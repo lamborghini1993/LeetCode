@@ -56,9 +56,9 @@
             "problemMatcher": []
         },
         {
-            "label": "python",
+            "label": "运行当前python文件",
             "type": "shell",
-            "command": "python3",
+            "command": "${command:python.interpreterPath}",
             "args": [
                 "${file}"
             ],
@@ -66,7 +66,19 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "problemMatcher": []
+        },
+        {
+            "label": "自动分类leetcode题目",
+            "type": "shell",
+            "command": "${command:python.interpreterPath}",
+            "args": [
+                "auto/auto_classifiy.py",
+                "--commit=1"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
         }
     ]
 }

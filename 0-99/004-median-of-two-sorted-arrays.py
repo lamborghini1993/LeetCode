@@ -1,9 +1,8 @@
 class Solution:
+
     def findMedianSortedArrays(self, nums1, nums2):
         """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: float
+        合并然后在找中位数
         """
         lstResult = []
         i = j = 0
@@ -28,6 +27,6 @@ class Solution:
         return (lstResult[iLen // 2 - 1] + lstResult[iLen // 2]) / 2
 
 
-obj = Solution()
-print(obj.findMedianSortedArrays([1, 3], [2]))
-print(obj.findMedianSortedArrays([1, 2], [3, 4]))
+func = Solution().findMedianSortedArrays
+print(func([1, 3], [2]))
+print(func([1, 2], [3, 4]))
